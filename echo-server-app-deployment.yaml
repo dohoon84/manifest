@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/name: echo-server-app
+  name: echo-server-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: echo-server-app
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: echo-server-app
+    spec:
+      containers:
+      - image: kicbase/echo-server:0.5.1
+        name: ehco-server-app
+        ports:
+        - containerPort: 8080
