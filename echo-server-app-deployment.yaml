@@ -15,7 +15,7 @@ spec:
         app.kubernetes.io/name: echo-server
     spec:
       containers:
-      - image: kicbase/echo-server:0.5.1
+      - image: ealen/echo-server
         name: ehco-server
         ports:
         - containerPort: 8080
